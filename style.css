@@ -1,0 +1,263 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+:root {
+    --fundo-principal: #000000;
+    --texto-principal: #ffffff;
+    --detalhe-cinza: #666666;
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+
+#navbar {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    padding: 15px 5%;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Transição */
+    transition: justify-content 0.4s ease;
+}
+
+#logo {
+    height: auto;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+
+.nav-branca {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.nav-branca .nav-container {
+    justify-content: center;
+    height: 60px; /* aumento o tamanho da logo */
+    width: 120px;
+}
+
+
+.nav-branca #logo {
+    width: 95px; /* Logo maior */
+    filter: invert(0); /* Logo escura na nav clara */
+      
+}
+
+/* Links oculto */
+#nav-links {
+    opacity: 0;
+    width: 0; /* ocultando espaço */
+    visibility: hidden;
+    transition: opacity 0.4s ease, width 0.4s ease;
+}
+
+
+.nav-transparente {
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px);
+}
+
+.nav-transparente .nav-container {
+    justify-content: space-between; 
+    height: 70px;
+}
+
+.nav-transparente #logo {
+    width: 95px;
+    filter: invert(1); 
+    
+}
+
+
+#nav-links.visivel {
+    opacity: 1;
+    width: auto; 
+    visibility: visible;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.secao {
+    padding: 80px 5%;
+    min-height: 100vh; /* seções ocupando a tela inteira */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fundo-escuro {
+    background-color: #111111; 
+}
+
+h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.header-capa {
+    min-height: 115vh; 
+    padding: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.banner-capa {
+    background-image: url('img/Artistapernambucano1.png');
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #000000; 
+}
+
+
+/* Quem Sou Eu */
+.conteudo-flex {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    max-width: 1000px;
+}
+
+.conteudo-flex .texto {
+    flex: 2;
+}
+
+.citacao {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--detalhe-cinza);
+    padding-left: 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+.fotos-perfil {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.animar {
+    border-radius: 20%;
+    object-fit: cover;
+    margin: 0px;
+}
+
+/* Destaques */
+.destaques-grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    
+}
+
+.destaque-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.destaque-item span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--detalhe-cinza);
+    margin-bottom: 10px;
+}
+
+.destaque-item img {
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Contato */
+.contato-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.contato-conteudo img {
+    width: 40%;
+    height: 350px;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+.contato-conteudo .info {
+    width: 60%;
+    text-align: left;
+}
+
+.contato-conteudo .info p {
+    margin-bottom: 10px;
+}
+
+
+.animar {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.animar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
