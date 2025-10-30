@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ================= ANIMAÇÕES =================
+    // ANIMAÇÕES 
     const elementosParaAnimar = document.querySelectorAll('.animar');
     const observerOptions = {
         root: null,
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     elementosParaAnimar.forEach(elemento => observer.observe(elemento));
 
-    // ================= NAVBAR SCROLL =================
+    // NAVBAR SCROLL
     const navbar = document.getElementById('navbar');
     const logo = document.getElementById('logo');
     const navLinks = document.getElementById('nav-links');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    // ================= HAMBURGER MENU =================
+    // HAMBURGER MENU 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('ativo');
         navLinks.classList.toggle('visivel');
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ================= COMPRAR VIA WHATSAPP =================
+    // COMPRAR VIA WHATSAPP 
     const botoesComprar = document.querySelectorAll('.btn-comprar');
     const modal = document.createElement('div');
     modal.className = 'modal';
@@ -125,6 +125,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="text" id="dimensoes-personalizadas" placeholder="Ex: 45x60 cm">
                 </div>
 
+                <div class="form-group">
+                    <label>Escolha o tipo de tela:</label>
+                    <div class="tipo-tela-opcoes">
+                        <div class="tipo-tela-opcao" data-tipo="Pintura">
+                            <span>Pintura</span>
+                        </div>
+                        <div class="tipo-tela-opcao" data-tipo="Pintura e Bordado">
+                            <span>Pintura e Bordado</span>
+                        </div>
+                        <div class="tipo-tela-opcao" data-tipo="Bordado">
+                            <span>Bordado</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="tipo-tela-selecionado" required>
+                </div>
+
                 <button type="submit" class="btn-whatsapp">
                     📱 Enviar Pedido via WhatsApp
                 </button>
@@ -136,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Variáveis para armazenar dados
     let obraAtual = '';
     let tamanhoSelecionado = '';
+    let tipoTelaSelecionado = '';
 
     // Abrir modal ao clicar em comprar
     botoesComprar.forEach(botao => {
@@ -155,7 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.querySelectorAll('.tamanho-opcao').forEach(opcao => {
                 opcao.classList.remove('selecionado');
             });
+            modal.querySelectorAll('.tipo-tela-opcao').forEach(opcao => {
+                opcao.classList.remove('selecionado');
+            });
             modal.querySelector('#tamanho-selecionado').value = '';
+            modal.querySelector('#tipo-tela-selecionado').value = '';
             modal.querySelector('#tamanho-personalizado').style.display = 'none';
             
             modal.style.display = 'block';
@@ -183,6 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.querySelector('#tamanho-personalizado').style.display = 'none';
             }
         }
+
+        // Selecionar tipo de tela
+        if (e.target.classList.contains('tipo-tela-opcao') || e.target.closest('.tipo-tela-opcao')) {
+            const opcaoTipoTela = e.target.classList.contains('tipo-tela-opcao') ? e.target : e.target.closest('.tipo-tela-opcao');
+            
+            // Remover seleção anterior
+            modal.querySelectorAll('.tipo-tela-opcao').forEach(opcao => {
+                opcao.classList.remove('selecionado');
+            });
+            
+            // Adicionar seleção atual
+            opcaoTipoTela.classList.add('selecionado');
+            tipoTelaSelecionado = opcaoTipoTela.getAttribute('data-tipo');
+            modal.querySelector('#tipo-tela-selecionado').value = tipoTelaSelecionado;
+        }
     });
 
     // Fechar modal
@@ -206,9 +242,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const descricao = modal.querySelector('#descricao-obra').value;
         const tamanho = modal.querySelector('#tamanho-selecionado').value;
         const dimensoesPersonalizadas = modal.querySelector('#dimensoes-personalizadas').value;
+        const tipoTela = modal.querySelector('#tipo-tela-selecionado').value;
         
+        // Validar seleções
+        if (!tipoTela) {
+            alert('Por favor, selecione o tipo de tela.');
+            return;
+        }
+
         // Montar mensagem para WhatsApp
-        const telefoneVendedor = '5581982748875'; // número com DDD sem parênteses ou traços
+        const telefoneVendedor = '5581994527528'; // número com DDD sem parênteses ou traços
         let mensagem = `Olá Gabriel! Gostaria de encomendar uma obra:\n\n`;
         
         if (obraAtual !== 'Obra Personalizada') {
@@ -223,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mensagem += `*Tamanho:* ${tamanho}\n`;
         }
         
+        mensagem += `*Tipo de Tela:* ${tipoTela}\n`;
         mensagem += `\nAguardo seu retorno para finalizarmos os detalhes!`;
         
         // Codificar mensagem para URL
@@ -241,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', handleScroll);
 });
 
-// ================= BANNER ANIMATION =================
+// BANNER ANIMATION 
 function animarBanner() {
     const bannerTitulo = document.querySelector('.banner-texto h1');
     const bannerSubtitulo = document.querySelector('.banner-texto h2');
@@ -261,7 +305,7 @@ function animarBanner() {
     }, 900);
 }
 
-// ================= OTIMIZAÇÃO PARA MOBILE =================
+// OTIMIZAÇÃO PARA MOBILE 
 function optimizeForMobile() {
     if (window.innerWidth <= 768) {
         // Forçar hardware acceleration para animações
