@@ -42,11 +42,25 @@ body {
     height: auto;
     cursor: pointer;
     transition: all 0.4s ease;
+    margin-top: 40px;
 }
 
-.nav-branca #nav-links {
-    display: none; 
+/* Quando a nav ficar branca (no scroll) */
+.nav-branca {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
 }
+
+
+.nav-branca #logo {
+    width: 95px;
+    filter: invert(0);
+}
+
+.nav-branca #nav-links a {
+    color: #000; /* links pretos no fundo branco */
+}
+
 
 .nav-branca {
     background-color: rgba(255, 255, 255, 0.95);
@@ -54,15 +68,11 @@ body {
 }
 
 .nav-branca .nav-container {
-    justify-content: center;
+    justify-content: space-between; /* mantém os links e logo */
     height: 60px;
-    width: 120px;
+    width: 100%;
 }
 
-.nav-branca #logo {
-    width: 95px;
-    filter: invert(0);
-}
 
 #nav-links {
     opacity: 0;
@@ -230,10 +240,6 @@ img {
 }
 
 .banner-capa {
-    background-image: url('img/Artistapernambucano1.png');
-    background-size: contain; 
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: #000000; 
 }
 
@@ -268,11 +274,6 @@ p {
     gap: 20px;
 }
 
-.animar {
-    border-radius: 20%;
-    object-fit: cover;
-    margin: 0px;
-}
 
 /* DESTAQUES */
 .destaques-grade {
@@ -361,6 +362,201 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* ================== NOVO BANNER ================== */
+.banner-capa {
+    background-color: #000000;
+    min-height: 100vh;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    gap: 50px;
+}
+
+.banner-texto h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.banner-texto h2 {
+    font-family: var(--fonte-corpo);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--detalhe-cinza);
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 0;
+    color: #ffffff;
+}
+
+.banner-imagens {
+    display: flex;
+    position: relative;
+    height: 400px;
+    width: 450px;
+}
+
+.imagem-container {
+    width: 250px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transition: transform 0.4s ease, z-index 0.4s ease;
+}
+
+.imagem-container:nth-child(1) {
+    left: 0;
+    z-index: 3;
+    transform: rotate(-8deg);   
+}
+
+.imagem-container:nth-child(2) {
+    left: 180px;
+    z-index: 2;
+    transform: rotate(3deg);
+}
+
+.imagem-container:nth-child(3) {
+    left: 300px;
+    z-index: 1;
+    transform: rotate(10deg);
+}
+
+.imagem-container:hover {
+    z-index: 4;
+    transform: scale(1.08) rotate(0deg);
+}
+
+.imagem-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================== RESPONSIVIDADE DO BANNER ================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .banner-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+    
+    .banner-texto h1 {
+        font-size: 3rem;
+    }
+    
+    .banner-texto h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .banner-imagens {
+        height: 350px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .imagem-container {
+        width: 200px;
+        height: 280px;
+    }
+    
+    .imagem-container:nth-child(1) {
+        left: 15%;
+    }
+    
+    .imagem-container:nth-child(2) {
+        left: 40%;
+    }
+    
+    .imagem-container:nth-child(3) {
+        left: 65%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .banner-texto h1 {
+        font-size: 2.2rem;
+    }
+    
+    .banner-texto h2 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-imagens {
+        height: 280px;
+    }
+    
+    .imagem-container {
+        width: 160px;
+        height: 220px;
+    }
+    
+    .imagem-container:nth-child(1) {
+        left: 10%;
+    }
+    
+    .imagem-container:nth-child(2) {
+        left: 35%;
+    }
+    
+    .imagem-container:nth-child(3) {
+        left: 60%;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    .banner-texto h1 {
+        font-size: 1.8rem;
+    }
+    
+    .banner-texto h2 {
+        font-size: 1.2rem;
+    }
+    
+    .banner-imagens {
+        height: 220px;
+    }
+    
+    .imagem-container {
+        width: 120px;
+        height: 180px;
+    }
+    
+    .imagem-container:nth-child(1) {
+        left: 5%;
+    }
+    
+    .imagem-container:nth-child(2) {
+        left: 35%;
+    }
+    
+    .imagem-container:nth-child(3) {
+        left: 65%;
+    }
+}
+
 
 /* ================== MEDIA QUERIES ================== */
 

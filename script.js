@@ -58,3 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// ================= BANNER ANIMATION =================
+function animarBanner() {
+    const bannerTitulo = document.querySelector('.banner-texto h1');
+    const bannerSubtitulo = document.querySelector('.banner-texto h2');
+    const bannerImagens = document.querySelector('.banner-imagens');
+    
+    // Animação em cascata para os elementos do banner
+    setTimeout(() => {
+        bannerTitulo.classList.add('visivel');
+    }, 300);
+    
+    setTimeout(() => {
+        bannerSubtitulo.classList.add('visivel');
+    }, 600);
+    
+    setTimeout(() => {
+        bannerImagens.classList.add('visivel');
+    }, 900);
+}
+
+// Chame a função quando a página carregar
+window.addEventListener('load', animarBanner);
