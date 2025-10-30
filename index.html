@@ -1,185 +1,228 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Portifólio Gabriel | Gabba</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Adicionando Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portifólio Gabriel | Gabba </title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap"
-    rel="stylesheet" />
-</head>
+  <body>
+    <nav id="navbar" class="nav-branca">
+      <div class="nav-container">
+        <img
+          id="logo"
+          src="img/logo_trasnparente.png"
+          alt="Assinatura do Artista"
+          class="logo-centralizada"
+        />
 
-<body>
-
-  <nav id="navbar" class="nav-branca">
-    <div class="nav-container">
-      <img id="logo" src="img/logo_trasnparente.png" alt="Assinatura do Artista" class="logo-centralizada" />
-
-      <div id="nav-links" class="nav-links">
-        <a href="#quem-sou-eu">Sobre</a>
-        <a href="#destaques">Obras</a>
-        <a href="#contato">Contato</a>
-      </div>
-
-      <!-- Botão hamburger -->
-      <div id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- NOVO BANNER COM SOBREPOSIÇÃO DE IMAGENS -->
-  <header class="secao header-capa banner-capa">
-    <div class="banner-container">
-      <div class="banner-texto">
-        <h1 class="animar">Artista Pernambucando</h1>
-        <h2 class="animar">Gabba</h2>
-      </div>
-      <div class="banner-imagens animar">
-        <div class="imagem-container">
-          <img src="img/quadro_cachorro.jpg" alt="Obra de arte 1" />
+        <div id="nav-links" class="nav-links">
+          <a href="#quem-sou-eu">Sobre</a>
+          <a href="#destaques">Obras</a>
+          <a href="#contato">Contato</a>
         </div>
-        <div class="imagem-container">
-          <img src="img/quadro_mulher.jpg" alt="Obra de arte 2" />
-        </div>
-        <div class="imagem-container">
-          <img src="img/quadro_rosa.jpg" alt="Obra de arte 3" />
+
+        <!-- Botão hamburger -->
+        <div id="hamburger" class="hamburger-mobile">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-    </div>
-  </header>
+    </nav>
 
-</body>
-
-</html>
-
-<section id="quem-sou-eu" class="secao fundo-escuro">
-  <h2 class="animar">QUEM SOU EU</h2>
-  <div class="conteudo-flex">
-    <div class="texto animar">
-      <p class="citacao">Quando a paixão é forte, se perpetua.</p>
-      <p>
-        Me chamo <b>Gabriel</b>, tenho <b>25 anos</b>. Tenho alguns gostos e
-        hobbies que me fazem viver a vida motivada a realizar alguns sonhos.
-        Gosto de ler, conversar, ouvir bastante música, poesia e
-        principalmente... de PINTAR!.
-      </p>
-      <br />
-
-      <p>
-        Durante o ano da <b>pandemia</b>, em um momento de pouca perspectiva, a
-        pintura se tornou minha fuga e minha luz. Resolvi elaborar um
-        <b>presente genuíno, feito à mão</b>, e foi ali, <b>pintando minha primeira
-          tela</b> — de forma improvisada com <b>tinta guache e pincéis de maquiagem</b>
-        — que percebi o poder transformador da arte. Esse momento marcou o
-        recomeço de uma jornada que resultou em mais de 100 telas pintadas
-        até hoje.
-      </p> <br>
-
-      <p>
-        Para mim, a arte é a forma mais pura de <b>expressar e colocar o
-          sentimento na tela</b>. Meu trabalho vai além da pintura: busco inovar,
-        arrisquei a <b>mistura de bordado com pintura</b>, uma técnica que
-        tem recebido um feedback incrivelmente positivo. O que começou como
-        um hobby se transformou em algo maior: a <b>omercialização da minha
-          arte</b>. Quando você adquire uma peça, você leva um <b>pedacinho do meu
-          coração</b>. Afinal, <b>Quando a paixão é forte, se
-          perpetua</b>.
-      </p>
-    </div>
-    <div class="fotos-perfil">
-      <img src="img/artista.jpg" alt="Retrato Artista" class="destaque-item animar" />
-    </div>
-  </div>
-</section>
-
-<section id="destaques" class="secao">
-  <h2 class="animar">MINHAS OBRAS EM DESTAQUE</h2>
-
-  <div class="destaques-grade">
-    <div class="destaque-item animar" data-delay="0">
-      <span>01</span>
-      <img src="img/IMG_1998.jpg" alt="Quadro Crianças" />
-      <div class="texto">
-        <h3>Retrato Jogador</h3>
-        <p>
-          Descrição
-        </p>
-        <button class="btn-comprar">Compre Agora</button>
+    <!-- NOVO BANNER COM SOBREPOSIÇÃO DE IMAGENS -->
+    <header class="secao header-capa banner-capa">
+      <div class="banner-container">
+        <div class="banner-texto">
+          <h1 class="animar">Artista Pernambucando</h1>
+          <h2 class="animar">Gabba</h2>
+        </div>
+        <div class="banner-imagens animar">
+          <div class="imagem-container">
+            <img src="img/quadro_cachorro.jpg" alt="Obra de arte 1" />
+          </div>
+          <div class="imagem-container">
+            <img src="img/quadro_mulher.jpg" alt="Obra de arte 2" />
+          </div>
+          <div class="imagem-container">
+            <img src="img/quadro_rosa.jpg" alt="Obra de arte 3" />
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <div class="destaque-item animar" data-delay="1">
-      <span>02</span>
-      <img src="img/IMG_2001.jpg" alt="Quadro Coruja" />
-      <div class="texto">
-        <h3>Coruja</h3>
-        <p>Descrição.</p>
-        <button class="btn-comprar">Compre Agora</button>
+    <section id="quem-sou-eu" class="secao fundo-escuro">
+      <h2 class="animar">QUEM SOU EU</h2>
+      <div class="conteudo-flex">
+        <div class="texto animar">
+          <p class="citacao">Quando a paixão é forte, se perpetua.</p>
+          <p>
+            Me chamo <b>Gabriel</b>, tenho <b>25 anos</b>. Tenho alguns gostos e
+            hobbies que me fazem viver a vida motivada a realizar alguns sonhos.
+            Gosto de ler, conversar, ouvir bastante música, poesia e
+            principalmente... de PINTAR!.
+          </p>
+          <br />
+
+          <p>
+            Durante o ano da <b>pandemia</b>, em um momento de pouca
+            perspectiva, a pintura se tornou minha fuga e minha luz. Resolvi
+            elaborar um <b>presente genuíno, feito à mão</b>, e foi ali,
+            <b>pintando minha primeira tela</b> — de forma improvisada com
+            <b>tinta guache e pincéis de maquiagem</b>
+            — que percebi o poder transformador da arte. Esse momento marcou o
+            recomeço de uma jornada que resultou em mais de 100 telas pintadas
+            até hoje.
+          </p>
+          <br />
+
+          <p>
+            Para mim, a arte é a forma mais pura de
+            <b>expressar e colocar o sentimento na tela</b>. Meu trabalho vai
+            além da pintura: busco inovar, arrisquei a
+            <b>mistura de bordado com pintura</b>, uma técnica que tem recebido
+            um feedback incrivelmente positivo. O que começou como um hobby se
+            transformou em algo maior: a <b>comercialização da minha arte</b>.
+            Quando você adquire uma peça, você leva um
+            <b>pedacinho do meu coração</b>. Afinal,
+            <b>Quando a paixão é forte, se perpetua</b>.
+          </p>
+        </div>
+        <div class="fotos-perfil">
+          <img
+            src="img/artista.jpg"
+            alt="Retrato Artista"
+            class="destaque-item animar"
+          />
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="destaque-item animar" data-delay="2">
-      <span>03</span>
-      <img src="img/quadro_corpo.jpg" alt="Corpo floral" />
-      <div class="texto">
-        <h3>Corpo Floral</h3>
-        <p>Descrição</p>
-        <button class="btn-comprar">Compre Agora</button>
+    <section id="destaques" class="secao">
+      <h2 class="animar">MINHAS OBRAS EM DESTAQUE</h2>
+
+      <div class="destaques-grade">
+        <div class="destaque-item animar" data-delay="0">
+          <span>01</span>
+          <img src="img/IMG_1998.jpg" alt="Quadro Crianças" />
+          <div class="texto">
+            <h3>Retrato Jogador</h3>
+            <p>Retrato em acrílico sobre tela</p>
+            <button class="btn-comprar" data-obra="Retrato Jogador">
+              Compre Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="destaque-item animar" data-delay="1">
+          <span>02</span>
+          <img src="img/IMG_2001.jpg" alt="Quadro Coruja" />
+          <div class="texto">
+            <h3>Coruja</h3>
+            <p>Arte em tela com técnicas mistas</p>
+            <button class="btn-comprar" data-obra="Coruja">Compre Agora</button>
+          </div>
+        </div>
+
+        <div class="destaque-item animar" data-delay="2">
+          <span>03</span>
+          <img src="img/quadro_corpo.jpg" alt="Corpo floral" />
+          <div class="texto">
+            <h3>Corpo Floral</h3>
+            <p>Pintura acrílica com elementos florais</p>
+            <button class="btn-comprar" data-obra="Corpo Floral">
+              Compre Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="destaque-item animar" data-delay="3">
+          <span>04</span>
+          <img
+            src="img/escudo_sport.jpeg"
+            alt="Pintuda do time Sport Club do Recife"
+          />
+          <div class="texto">
+            <h3>Sport Club do Recife</h3>
+            <p>Homenagem ao time do coração</p>
+            <button class="btn-comprar" data-obra="Sport Club do Recife">
+              Compre Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="destaque-item animar" data-delay="4">
+          <span>05</span>
+          <img src="img/cachorro2.png" alt="Cachorro bordado" />
+          <div class="texto">
+            <h3>Cachorro Poodle</h3>
+            <p>Bordado misturado com pintura</p>
+            <button class="btn-comprar" data-obra="Cachorro Poodle">
+              Compre Agora
+            </button>
+          </div>
+        </div>
+
+        <div class="destaque-item animar" data-delay="5">
+          <span>06</span>
+          <img src="img/starboy.png" alt="Cantor The Weekend" />
+          <div class="texto">
+            <h3>The Weekend</h3>
+            <p>Retrato do cantor em estilo pop art</p>
+            <button class="btn-comprar" data-obra="The Weekend">
+              Compre Agora
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
 
-
-    <div class="destaque-item animar" data-delay="2">
-      <span>04</span>
-      <img src="img/escudo_sport.jpeg" alt="Pintuda do time Sport Club do Recife" />
-      <div class="texto">
-        <h3>Sport Club do Recife</h3>
-        <p>Descrição</p>
-        <button class="btn-comprar">Compre Agora</button>
+      <!-- Botão para obra personalizada -->
+      <div class="obra-personalizada animar">
+        <h3>Quer uma obra personalizada?</h3>
+        <button
+          class="btn-comprar btn-personalizado"
+          data-obra="Obra Personalizada"
+        >
+          🎨 Solicitar Obra Personalizada
+        </button>
       </div>
-    </div>
+    </section>
 
-    <div class="destaque-item animar" data-delay="1">
-      <span>05</span>
-      <img src="img/cachorro2.png" alt="Cachorro bordado" />
-      <div class="texto">
-        <h3>Cachorro Poodle</h3>
-        <p>Descrição</p>
-        <button class="btn-comprar">Compre Agora</button>
+    <section id="contato" class="secao fundo-escuro">
+      <h2 class="animar">ENTRE EM CONTATO</h2>
+      <div class="contato-conteudo">
+        <img src="img/IMG_2004.jpg" alt="Foto do artista" class="animar" />
+        <div class="info animar">
+          <p><strong>E-mail:</strong> Email</p>
+          <p><strong>Telefone:</strong> (81) 99452-7528</p> <!-- numero celular -->
+          
+          <!-- Ícones das redes sociais -->
+          <div class="redes-sociais">
+            <a href="https://wa.me/5581982748875" target="_blank" class="social-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="Gabbablu10@gmail.com" target="_blank" class="social-icon">
+              <i class="far fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/gab.baart?igsh=Zzh1MDY5eHI1aHd6" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="destaque-item animar" data-delay="0">
-      <span>06</span>
-      <img src="img/starboy.png" alt="Cantor The Weekend" />
-      <div class="texto">
-        <h3>The Weekend</h3>
-        <p>Descrição</p>
-        <button class="btn-comprar">Compre Agora</button>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-<section id="contato" class="secao fundo-escuro">
-  <h2 class="animar">ENTRE EM CONTATO</h2>
-  <div class="contato-conteudo">
-    <img src="img/IMG_2004.jpg" alt="Foto do artista" class="animar" />
-    <div class="info animar">
-      <p><strong>E-mail:</strong> Email </p>
-      <p><strong>Telefone:</strong> (81) 98274-8875</p>
-      <p><strong>Endereço:</strong> Endereço </p>
-    </div>
-  </div>
-</section>
-
-<script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
