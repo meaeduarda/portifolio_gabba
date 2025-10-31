@@ -399,6 +399,79 @@ p {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+
+/* Efeito zoom para imagens em geral */
+.imagem-container img,
+.destaque-item img,
+.fotos-perfil img,
+.contato-conteudo img {
+    transition: transform 0.7s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Zoom nas imagens do banner */
+.imagem-container:hover img {
+    /* aumentado para ampliar um pouco mais */
+    transform: scale(1.18);
+    transition: transform 0.7s ease;
+}
+
+/* Zoom nas imagens dos destaques */
+.destaque-item:hover img {
+    transform: scale(1.12);
+    transition: transform 0.7s ease;
+}
+
+/* Zoom na foto de perfil */
+.fotos-perfil img:hover {
+    transform: scale(1.08);
+    transition: transform 0.7s ease;
+}
+
+/* Zoom na imagem de contato */
+.contato-conteudo img:hover {
+    transform: scale(1.12);
+    transition: transform 0.7s ease;
+}
+
+/* Efeito adicional de brilho suave no hover */
+.imagem-container:hover img,
+.destaque-item:hover img,
+.fotos-perfil img:hover,
+.contato-conteudo img:hover {
+    filter: brightness(1.12);
+    transition: all 0.7s ease;
+}
+
+/* MELHORIAS PARA DISPOSITIVOS MÓVEIS */
+
+@media (max-width: 768px) {
+    /* Ajustes de zoom para mobile — reduzido em relação ao desktop, mas maior que antes */
+    .imagem-container:hover img {
+        transform: scale(1.12);
+    }
+    
+    .destaque-item:hover img {
+        transform: scale(1.08);
+    }
+    
+    .fotos-perfil img:hover {
+        transform: scale(1.05);
+    }
+    
+    .contato-conteudo img:hover {
+        transform: scale(1.09);
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+    .imagem-container:hover img {
+        /* leve aumento para telas muito pequenas */
+        transform: scale(1.06);
+    }
+}
+
 /* BANNER COM DIMENSÕES PROPORCIONAIS  */
 .banner-container {
     display: flex;
