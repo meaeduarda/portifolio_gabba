@@ -411,7 +411,6 @@ p {
 
 /* Zoom nas imagens do banner */
 .imagem-container:hover img {
-    /* aumentado para ampliar um pouco mais */
     transform: scale(1.18);
     transition: transform 0.7s ease;
 }
@@ -443,10 +442,10 @@ p {
     transition: all 0.7s ease;
 }
 
-/* MELHORIAS PARA DISPOSITIVOS MÓVEIS */
+/*DISPOSITIVOS MÓVEIS */
 
 @media (max-width: 768px) {
-    /* Ajustes de zoom para mobile — reduzido em relação ao desktop, mas maior que antes */
+    /* Ajustes de zoom para mobile */
     .imagem-container:hover img {
         transform: scale(1.12);
     }
@@ -467,7 +466,6 @@ p {
 /* Para telas muito pequenas */
 @media (max-width: 480px) {
     .imagem-container:hover img {
-        /* leve aumento para telas muito pequenas */
         transform: scale(1.06);
     }
 }
@@ -578,7 +576,7 @@ p {
 
 /* NAVBAR MOBILE CORRIGIDA  */
 @media (max-width: 768px) {
-    /* Navbar sempre centralizada inicialmente */
+    /* Navbar centralizada inicialmente */
     .nav-branca .nav-container {
         justify-content: center;
     }
@@ -610,7 +608,7 @@ p {
         display: flex;
     }
     
-    /* Ajuste específico para iOS */
+    /* Ajuste para iOS */
     @supports (-webkit-touch-callout: none) {
         .banner-imagens {
             -webkit-transform: translateZ(0);
@@ -659,7 +657,7 @@ p {
         transition: all 0.4s ease;
     }
     
-    /* Posições otimizadas para mobile */
+    /* Posições para mobile */
     .imagem-container:nth-child(1) {
         left: 10%;
         top: 30px;
@@ -1330,7 +1328,6 @@ p {
   transform: translateY(-3px);
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .modal-content {
     margin: 5% auto;
