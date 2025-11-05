@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Montar mensagem para WhatsApp
-        const telefoneVendedor = '5581994527528'; 
+        const telefoneVendedor = '5581982748875'; 
         let mensagem = `Olá Gabriel! Gostaria de encomendar uma obra:\n\n`;
         
         if (obraAtual !== 'Obra Personalizada') {
