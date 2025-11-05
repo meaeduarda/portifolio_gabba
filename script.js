@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Montar mensagem para WhatsApp
-        const telefoneVendedor = '5581994527528'; // número com DDD sem parênteses ou traços
+        const telefoneVendedor = '5581994527528'; 
         let mensagem = `Olá Gabriel! Gostaria de encomendar uma obra:\n\n`;
         
         if (obraAtual !== 'Obra Personalizada') {
@@ -308,7 +308,6 @@ function animarBanner() {
 // OTIMIZAÇÃO PARA MOBILE 
 function optimizeForMobile() {
     if (window.innerWidth <= 768) {
-        // Forçar hardware acceleration para animações
         const elementosAnimados = document.querySelectorAll('.imagem-container, .banner-imagens');
         elementosAnimados.forEach(el => {
             el.style.transform = 'translateZ(0)';
@@ -316,7 +315,7 @@ function optimizeForMobile() {
     }
 }
 
-// Chamar as funções quando a página carregar
+// funções quando a página carregar
 window.addEventListener('load', () => {
     animarBanner();
     optimizeForMobile();
@@ -346,7 +345,7 @@ document.querySelectorAll('.destaque-item img').forEach((img, index) => {
         popupImagemGrande.alt = titulo;
         popupTitulo.textContent = titulo;
         
-        // Usar a descrição completa se disponível, senão usar a descrição curta
+        // Usar a descrição completa se disponível
         if (descricaoCompleta) {
             popupDescricao.innerHTML = descricaoCompleta.innerHTML;
         } else {
@@ -389,14 +388,13 @@ document.addEventListener('keydown', (e) => {
 btnComprarPopup.addEventListener('click', () => {
     const obra = btnComprarPopup.getAttribute('data-obra');
     
-    // Simular clique no botão comprar correspondente
     const botaoComprar = Array.from(document.querySelectorAll('.btn-comprar'))
         .find(botao => botao.getAttribute('data-obra') === obra);
     
     if (botaoComprar) {
         botaoComprar.click();
     } else {
-        // Se não encontrar, usar o botão de obra personalizada
+        
         document.querySelector('.btn-personalizado').click();
     }
     
