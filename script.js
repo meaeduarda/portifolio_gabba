@@ -323,3 +323,84 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', optimizeForMobile);
+
+// POPUP PARA IMAGENS DAS OBRAS
+const popupImagem = document.getElementById('popupImagem');
+const popupImagemGrande = document.getElementById('popupImagemGrande');
+const popupTitulo = document.getElementById('popupTitulo');
+const popupDescricao = document.getElementById('popupDescricao');
+const btnComprarPopup = document.getElementById('btnComprarPopup');
+const fecharPopup = document.querySelector('.fechar-popup');
+
+// Adicionar evento de clique nas imagens das obras
+document.querySelectorAll('.destaque-item img').forEach((img, index) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+        const destaqueItem = img.closest('.destaque-item');
+        const titulo = destaqueItem.querySelector('h3').textContent;
+        const descricaoCompleta = destaqueItem.querySelector('.descricao-completa');
+        const srcImagem = img.src;
+        
+        // Preencher o popup com os dados
+        popupImagemGrande.src = srcImagem;
+        popupImagemGrande.alt = titulo;
+        popupTitulo.textContent = titulo;
+        
+        // Usar a descrição completa se disponível, senão usar a descrição curta
+        if (descricaoCompleta) {
+            popupDescricao.innerHTML = descricaoCompleta.innerHTML;
+        } else {
+            const descricaoCurta = destaqueItem.querySelector('.texto p').textContent;
+            popupDescricao.textContent = descricaoCurta;
+        }
+        
+        // Configurar o botão de comprar
+        btnComprarPopup.setAttribute('data-obra', titulo);
+        
+        // Mostrar o popup
+        popupImagem.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Fechar popup
+fecharPopup.addEventListener('click', () => {
+    popupImagem.style.display = 'none';
+    document.body.style.overflow = '';
+});
+
+// Fechar popup ao clicar fora
+popupImagem.addEventListener('click', (e) => {
+    if (e.target === popupImagem) {
+        popupImagem.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Fechar popup com ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popupImagem.style.display === 'block') {
+        popupImagem.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Botão comprar no popup
+btnComprarPopup.addEventListener('click', () => {
+    const obra = btnComprarPopup.getAttribute('data-obra');
+    
+    // Simular clique no botão comprar correspondente
+    const botaoComprar = Array.from(document.querySelectorAll('.btn-comprar'))
+        .find(botao => botao.getAttribute('data-obra') === obra);
+    
+    if (botaoComprar) {
+        botaoComprar.click();
+    } else {
+        // Se não encontrar, usar o botão de obra personalizada
+        document.querySelector('.btn-personalizado').click();
+    }
+    
+    // Fechar popup
+    popupImagem.style.display = 'none';
+    document.body.style.overflow = '';
+});
