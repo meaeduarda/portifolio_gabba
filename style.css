@@ -574,7 +574,7 @@ p {
     transition: all 0.4s ease;
 }
 
-/* NAVBAR MOBILE CORRIGIDA  */
+/* NAVBAR MOBILE   */
 @media (max-width: 768px) {
     /* Navbar centralizada inicialmente */
     .nav-branca .nav-container {
@@ -734,7 +734,7 @@ p {
     
     /* Logo sempre visível e centralizada no mobile */
     #logo {
-        width: 70px;
+        width: 80px;
     }
     
     /* Esconde links normais no mobile */
@@ -814,7 +814,7 @@ p {
     }
     
     #logo {
-        width: 60px;
+        width: 80px;
     }
     
     .banner-texto h1 {
