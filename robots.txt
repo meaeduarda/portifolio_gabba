@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portifoliogabba.vercel.app/sitemap.xml
