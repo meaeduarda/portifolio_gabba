@@ -720,6 +720,8 @@ p {
 }
 
 /* Mobile */
+
+
 @media (max-width: 768px) {
     /* Ajustes gerais */
     .secao {
@@ -994,6 +996,48 @@ p {
 .btn-whatsapp:hover {
   background: #128C7E;
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contato-conteudo {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .contato-conteudo img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .contato-conteudo .info {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contato-conteudo .info p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .redes-sociais {
+    justify-content: center;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .contato-conteudo .info p {
+    font-size: 1rem;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
 }
 
 /* POPUP PARA IMAGENS DAS OBRAS */
