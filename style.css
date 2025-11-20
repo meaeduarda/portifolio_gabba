@@ -1419,3 +1419,63 @@ p {
         margin-bottom: 15px;
     }
 }
+.footer {
+  background-color: #111111;
+  border-top: 1px solid #333;
+  padding: 30px 5% 25px;
+  margin-top: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-info p {
+  text-align: center;
+  color: var(--detalhe-cinza);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.footer-info strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-info span {
+  color: var(--detalhe-cinza);
+  font-style: italic;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 5% 20px;
+  }
+  
+  .footer-info p {
+    font-size: 0.9rem;
+    line-height: 1.5; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 5% 15px;
+  }
+  
+  .footer-info p {
+    font-size: 0.85rem;
+    line-height: 1.6; 
+  }
+}
